@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- To change this license header, choose License Headers in Project Properties. 
+	To change this template file, choose Tools | Templates and open the template 
+	in the editor. -->
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+
+	<package name="uploadexcel" extends="struts-default">
+
+		<action name="index">
+			<result>index.jsp</result>
+		</action>
+		<action name="uploadExcel"
+			class="com.mycompany.strutsexcelfileuploadread.UploadExcelAction"
+			method="input">
+			<!-- <interceptor-ref name="fileUpload">
+         <param name="maximumSize">2097152</param>
+         <param name="allowedTypes">
+             image/png,image/gif,image/jpeg,image/pjpeg
+         </param> -->
+      <!--  </interceptor-ref> -->
+			<result name="success">success.jsp</result>
+			<result name="input">index.jsp</result>
+		</action>
+	</package>
+
+</struts>
